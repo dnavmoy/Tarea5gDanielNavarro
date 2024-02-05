@@ -4,6 +4,7 @@
  */
 package paqueteB;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Random;
@@ -15,23 +16,23 @@ import java.util.TreeMap;
  */
 public class Decimos {
  
-     //private Map<String,String> lista=new TreeMap<String,String>(); 
-    private Map<Integer,Double> lista = new TreeMap<Integer,Double>();
-    private final int registros=1000;
+    
+    private Map<Integer,Double> lista = new HashMap<Integer,Double>();
+    private final int REGISTROS=1000;
+    private final int NUMERO_FINAL=10000;
+    private final double premios=100_000;
 
     public Decimos() {
-        rellenar();
+         Random r = new Random();
+         for(int i=0;i<REGISTROS;i++){
+        lista.put(r.nextInt(NUMERO_FINAL+1), r.nextDouble(premios+1));
+        }
+       
     }
 
-    
-    public void rellenar(){
-        Random r = new Random();
-        for(int i=0;i<registros;i++){
-        lista.put(r.nextInt(10000), r.nextDouble(100_000));
-        }
-    }
+        
     public void mostrar(){
-        lista.forEach((k,v)->System.out.println("numero %05d".formatted(k)+ " premio: "+ v));
+        lista.forEach((k,v)->System.out.println("numero %05d".formatted(k)+ " premio: %.2f".formatted(v)));
     }
     
     public void consultarPremio(int numero){

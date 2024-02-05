@@ -30,13 +30,23 @@ public class Traductor {
         lista.remove(palabraExtranjera);
     }
     
-    public void modificarEntrada(String palabraExtranjera){
-        lista.remove(palabraExtranjera);
-        addEntrada(palabraExtranjera, Main.pedirTexto("palabra Español"));
+    public void modificarEntrada(String palabraExtranjera,String palabraEspanol){
+        this.lista.replace(palabraExtranjera, palabraEspanol);
+//        lista.remove(palabraExtranjera);
+//        addEntrada(palabraExtranjera, Main.pedirTexto("palabra Español"));
     }
     
     public void mostrarPalabras(){
        lista.forEach((k,v)->System.out.println("ingles: " + k + "-- Español: "+ v));
+       
+       
+    }
+    
+    public void mostrarPalabras2(){
+        for(Map.Entry<String,String> entrada:this.lista.entrySet()){
+            System.out.println(entrada.getKey()+"--" + entrada.getValue());
+        }
+        
     }
     public void traducir(String palabraExtranjera){
         System.out.println(lista.get(palabraExtranjera));

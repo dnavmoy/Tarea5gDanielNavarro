@@ -17,7 +17,6 @@ public class MainC {
     
     public static void main(String[] args) {
         
-        //commit
         ListadoVaquerias listado = new ListadoVaquerias();
         
         listado.getListado().put(1, new VaqueriaOrdenada());

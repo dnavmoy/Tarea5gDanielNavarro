@@ -17,7 +17,10 @@ public class Main {
         
         Traductor ingles = new Traductor();
         
+        
+        //si hago otro put con la misma clave sustituyo la clave
         ingles.addEntrada("hello", "hola");
+        ingles.addEntrada("hello", "hola!");
         ingles.addEntrada("house", "casa");
         ingles.addEntrada("pencil", "lapiz");
         ingles.addEntrada("car", "coche");
@@ -32,14 +35,17 @@ public class Main {
         System.out.println("-- borrar entrada hello");
         ingles.borrarEntrada("hello");
         ingles.mostrarPalabras();
-        System.out.println("--- cambiar entrada hello");
-        //ingles.modificarEntrada("hello");
-        System.out.println("----------buscar house");
+        System.out.println("--- cambiar entrada car");
+        ingles.modificarEntrada("car","auto");
+        ingles.mostrarPalabras();
+        System.out.println("----------traducir house");
         ingles.traducir("house");
         System.out.println("lista palabras inlges");
         ingles.mostrarListaExtrajera();
         System.out.println("lista palabra español");
         ingles.mostrarListaEspañol();
+        System.out.println("mostrar palabras v2");
+        ingles.mostrarPalabras2();
         
         
     }

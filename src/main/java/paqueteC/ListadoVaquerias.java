@@ -4,6 +4,8 @@
  */
 package paqueteC;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.TreeMap;
@@ -14,9 +16,10 @@ import java.util.TreeMap;
  */
 public class ListadoVaquerias {
     
-    private Map<Integer,VaqueriaOrdenada> listado=new TreeMap<>();
+    private Map<Integer,VaqueriaOrdenada> listado;
 
     public ListadoVaquerias() {
+        listado=new HashMap<>();
     }
 
     public Map<Integer,VaqueriaOrdenada> getListado() {
@@ -69,6 +72,11 @@ public class ListadoVaquerias {
         listado.forEach((k,v)-> System.out.println(v));
     }
     
+    public  ArrayList<VaqueriaOrdenada> obtenerVaquerias(){
+        ArrayList<VaqueriaOrdenada> listadoVaquerias = new ArrayList<>(listado.values());
+        
+        return listadoVaquerias;
+    }
     
     
 }
